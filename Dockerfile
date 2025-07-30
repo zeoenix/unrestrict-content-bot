@@ -2,10 +2,8 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy the simple HTTP server (no dependencies needed)
-COPY simple_http.py .
+# Copy the diagnostic script
+COPY diagnostic.py .
 
-# Expose port
-EXPOSE 8080
-
-CMD ["python", "simple_http.py"]
+# Run diagnostics (will stay alive for 5 minutes)
+CMD ["python", "diagnostic.py"]

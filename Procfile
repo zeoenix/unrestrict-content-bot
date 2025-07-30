@@ -1,1 +1,1 @@
-web: python combined_server.py
+web: python health_only.py

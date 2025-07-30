@@ -1,1 +1,1 @@
-web: python ultimate_debug.py
+web: python combined_server.py

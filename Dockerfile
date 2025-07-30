@@ -2,8 +2,18 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy the minimal server
-COPY minimal_server.py .
+# Copy requirements and install (needed for proper Railway deployment)
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# No healthcheck - let's see if container runs at all
-CMD ["python", "minimal_server.py"]
+# Copy the final combined server
+COPY final_combined.py .
+COPY bot.py .
+COPY config.py .
+COPY database/ database/
+COPY TechVJ/ TechVJ/
+
+# Expose port
+EXPOSE 8080
+
+CMD ["python", "final_combined.py"]

@@ -1,1 +1,1 @@
-web: python minimal_server.py
+web: python final_combined.py

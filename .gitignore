@@ -188,12 +188,3 @@ render.yaml
 *.pid
 *.sock
 gunicorn.log
-
-BOT_TOKEN=your_bot_token
-API_ID=your_api_id
-API_HASH=your_api_hash
-ADMINS=your_admin_id
-DB_URI=your_mongodb_uri
-DB_NAME=vjsavecontentbot
-ERROR_MESSAGE=True
-PORT=8080

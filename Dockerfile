@@ -2,7 +2,17 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy simple emergency diagnostic as bot.py
-COPY emergency_simple.py bot.py
+# Copy requirements and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python", "bot.py"]
+# Copy all application files
+COPY . .
+
+# Create a simple server that runs both health check and bot
+COPY minimal_server.py health_server.py
+
+# Run both the health server and bot using a simple shell script
+RUN echo '#!/bin/bash\npython health_server.py &\npython bot.py' > start.sh && chmod +x start.sh
+
+CMD ["bash", "start.sh"]

@@ -1,1 +1,1 @@
-web: python health_only.py
+web: python minimal_server.py

@@ -16,12 +16,13 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Copy application code
 COPY . .
 
-# Expose port
+# Expose port (both default and environment variable)
 EXPOSE 8080
+EXPOSE $PORT
 
 # Health check with longer startup time
 HEALTHCHECK --interval=30s --timeout=30s --start-period=30s --retries=3 \
     CMD curl -f http://localhost:8080/health || exit 1
 
 # Run the emergency server
-CMD ["python", "health_only.py"]
+CMD ["python", "minimal_server.py"]

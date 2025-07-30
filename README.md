@@ -2,6 +2,8 @@
 
 A powerful Telegram bot that allows users to save restricted content from private channels, groups, and bot chats.
 
+🤖 **Live Bot:** [@saving_restricted_contentbot](https://t.me/saving_restricted_contentbot)
+
 ---
 ## Support 💬
 
@@ -17,6 +19,17 @@ A powerful Telegram bot that allows users to save restricted content from privat
 - 🛡️ Security & Production Updates Video Tutorial - [Click Here](https://youtu.be/BFEvSX5vIMg)**
 
 ---
+
+## Recent Updates 🆕
+
+### Version 2.0 - Project Optimization (July 2025)
+- ✅ **Complete codebase cleanup** - Removed unnecessary Flask health check servers
+- ✅ **Optimized deployment** - Single replica configuration prevents duplicate messages
+- ✅ **Railway deployment ready** - Streamlined Docker configuration
+- ✅ **Development environment** - Added VS Code workspace configuration
+- ✅ **Size optimization** - Reduced project size from ~750MB to ~53MB
+- ✅ **Error fixes** - Resolved all import and dependency issues
+- ✅ **Production ready** - Enhanced security and stability
 
 ## Features ✨
 
@@ -41,7 +54,7 @@ This version includes several security enhancements:
 ## Setup Instructions 🚀
 
 ### 1. Prerequisites
-- Python 3.10+
+- Python 3.11+ (3.13.2 recommended for local development)
 - MongoDB database
 - Telegram Bot Token
 - Telegram API credentials
@@ -50,14 +63,14 @@ This version includes several security enhancements:
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
-cd Archive
+git clone git@github.com:zeoenix/unrestrict-content-bot.git
+cd unrestrict-content-bot
 ```
 
 2. Create and activate virtual environment:
 ```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
 3. Install dependencies:
@@ -139,15 +152,36 @@ Note: Spaces between numbers don't matter.
 python bot.py
 ```
 
-### With Flask (for deployment platforms)
-```bash
-python app.py & python bot.py
-```
+### Railway Deployment
+This project is optimized for Railway deployment:
+
+1. Connect your GitHub repository to Railway
+2. Set environment variables in Railway dashboard
+3. Railway will automatically use the `Dockerfile` for deployment
+4. The bot runs with single replica configuration to prevent duplicate messages
 
 ### Docker
 ```bash
 docker build -t techvj-bot .
 docker run -d --env-file .env techvj-bot
+```
+
+## Project Structure 📁
+
+```
+├── bot.py                 # Main bot entry point
+├── config.py              # Configuration management
+├── database/              # Database operations
+│   └── db.py             
+├── TechVJ/               # Bot functionality modules
+│   ├── start.py          # Message handlers (/start, /help, etc.)
+│   ├── generate.py       # Content generation & session management
+│   ├── broadcast.py      # Admin broadcasting
+│   └── strings.py        # String constants
+├── Dockerfile            # Docker configuration
+├── railway.json          # Railway deployment config
+├── requirements.txt      # Python dependencies
+└── .env.example         # Environment variables template
 ```
 
 ## Security Notes ⚠️

@@ -1,1 +1,1 @@
-web: python diagnostic.py
+web: python bot.py

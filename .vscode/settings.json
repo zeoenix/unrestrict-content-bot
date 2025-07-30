@@ -1,0 +1,17 @@
+{
+    "python.defaultInterpreterPath": "./.venv/bin/python",
+    "python.analysis.extraPaths": ["./"],
+    "python.analysis.exclude": [
+        ".venv/**",
+        "**/__pycache__/**",
+        "app.py",
+        "run.py",
+        "simple_start.py", 
+        "start-both.py"
+    ],
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        ".venv": false
+    }
+}

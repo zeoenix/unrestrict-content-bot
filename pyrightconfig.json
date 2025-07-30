@@ -1,0 +1,20 @@
+{
+  "include": [
+    "bot.py",
+    "config.py",
+    "database/",
+    "TechVJ/"
+  ],
+  "exclude": [
+    ".venv/",
+    "__pycache__/",
+    "*.pyc",
+    "app.py",
+    "run.py", 
+    "simple_start.py",
+    "start-both.py"
+  ],
+  "venvPath": ".",
+  "venv": ".venv",
+  "pythonVersion": "3.13"
+}

@@ -65,9 +65,9 @@ async def send_start(client: Client, message: Message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
     buttons = [[
-        InlineKeyboardButton("💬 ғᴇᴇᴅʙᴀᴄᴋ / ʀᴇQᴜᴇsᴛ", url = "https://t.me/TP_Botz")
+        InlineKeyboardButton("💬 ғᴇᴇᴅʙᴀᴄᴋ / ʀᴇQᴜᴇsᴛ", url = "https://t.me/+uoXqT1_R7DhiYTNl")
     ],[
-        InlineKeyboardButton("❣️ ᴅᴇᴠᴇʟᴏᴘᴇʀ", url = "https://t.me/TP_Botz")
+        InlineKeyboardButton("❣️ ᴅᴇᴠᴇʟᴏᴘᴇʀ", url = "https://t.me/TP_BotzBot")
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)  # type: ignore
     await client.send_message(

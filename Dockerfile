@@ -9,5 +9,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy all application files
 COPY . .
 
-# Use the Python startup script instead of bash
-CMD ["python", "startup.py"]
+# Just run the bot directly - we know this works
+CMD ["python", "bot.py"]

@@ -2,10 +2,7 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy bot.py but rename our diagnostic as bot.py so Railway runs it
-COPY diagnostic.py bot.py
-
-# Also copy the real diagnostic for reference
-COPY diagnostic.py .
+# Copy simple emergency diagnostic as bot.py
+COPY emergency_simple.py bot.py
 
 CMD ["python", "bot.py"]

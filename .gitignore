@@ -184,6 +184,10 @@ railway.toml
 fly.toml
 render.yaml
 
+# Conflicting startup files (temporarily disabled)
+start.sh.disabled
+start-both.py.disabled
+
 # Runtime files
 *.pid
 *.sock

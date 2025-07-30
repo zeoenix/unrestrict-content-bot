@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "techvj-bot",
-      "script": "minimal_server.py",
+      "script": "diagnostic.py",
       "interpreter": "python3",
       "instances": 1,
       "autorestart": true,

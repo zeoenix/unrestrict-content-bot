@@ -1,1 +1,1 @@
-web: python simple_http.py
+web: python diagnostic.py
